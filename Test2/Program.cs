@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Test2.Interface;
 using Test2.Models;
+using Test2.Repositry;
+using Test2.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IOfficeRepositry,OfficeRepositry>();
+builder.Services.AddScoped<IOfficeService, OfficeService>();
 
 var app = builder.Build();
 

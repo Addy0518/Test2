@@ -35,6 +35,22 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[usp_ACPD_Delete]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[usp_ACPD_Update]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[usp_ACPD_ViewAll]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[usp_ACPD_ViewOne]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[usp_AddLog]",
          "ObjectType": 1
       }

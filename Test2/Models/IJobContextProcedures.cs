@@ -15,6 +15,10 @@ namespace Test2.Models
     {
         Task<int> NEWSIDAsync(string tableName, OutputParameter<string> returnSID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<usp_ACPD_CreateResult>> usp_ACPD_CreateAsync(string inBox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<usp_ACPD_DeleteResult>> usp_ACPD_DeleteAsync(string inBox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<usp_ACPD_UpdateResult>> usp_ACPD_UpdateAsync(string inbox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<usp_ACPD_ViewAllResult>> usp_ACPD_ViewAllAsync(string inbox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<usp_ACPD_ViewOneResult>> usp_ACPD_ViewOneAsync(string inbox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> usp_AddLogAsync(byte? _InBox_ReadID, string _InBox_SPNAME, Guid? _InBox_GroupID, string _InBox_ExProgram, string _InBox_ActionJSON, OutputParameter<string> _OutBox_ReturnValues, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
     }
 }

@@ -107,6 +107,114 @@ namespace Test2.Models
             return _;
         }
 
+        public virtual async Task<List<usp_ACPD_DeleteResult>> usp_ACPD_DeleteAsync(string inBox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "InBox_Json",
+                    Size = -1,
+                    Value = inBox_Json ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<usp_ACPD_DeleteResult>("EXEC @returnValue = [dbo].[usp_ACPD_Delete] @InBox_Json = @InBox_Json", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<usp_ACPD_UpdateResult>> usp_ACPD_UpdateAsync(string inbox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "Inbox_Json",
+                    Size = -1,
+                    Value = inbox_Json ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<usp_ACPD_UpdateResult>("EXEC @returnValue = [dbo].[usp_ACPD_Update] @Inbox_Json = @Inbox_Json", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<usp_ACPD_ViewAllResult>> usp_ACPD_ViewAllAsync(string inbox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "Inbox_Json",
+                    Size = -1,
+                    Value = inbox_Json ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<usp_ACPD_ViewAllResult>("EXEC @returnValue = [dbo].[usp_ACPD_ViewAll] @Inbox_Json = @Inbox_Json", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<usp_ACPD_ViewOneResult>> usp_ACPD_ViewOneAsync(string inbox_Json, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "Inbox_Json",
+                    Size = -1,
+                    Value = inbox_Json ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<usp_ACPD_ViewOneResult>("EXEC @returnValue = [dbo].[usp_ACPD_ViewOne] @Inbox_Json = @Inbox_Json", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
         public virtual async Task<int> usp_AddLogAsync(byte? _InBox_ReadID, string _InBox_SPNAME, Guid? _InBox_GroupID, string _InBox_ExProgram, string _InBox_ActionJSON, OutputParameter<string> _OutBox_ReturnValues, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameter_OutBox_ReturnValues = new SqlParameter
